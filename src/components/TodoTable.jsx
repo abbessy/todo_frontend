@@ -31,7 +31,7 @@ export default function TodoTable({ todos, onRefresh, onEdit }) {
         </thead>
         <tbody>
           {todos.map(todo => (
-            <tr key={todo._id}>
+            <tr key={todo.id}>
               <td>{todo.title}</td>
               <td>{todo.completed ? "Yes" : "No"}</td>
               <td className="actions">
@@ -48,7 +48,7 @@ export default function TodoTable({ todos, onRefresh, onEdit }) {
           <p>Are you sure you want to delete "{selected.title}"?</p>
           <div style={{display:'flex', justifyContent:'flex-end', gap:'10px', marginTop:'10px'}}>
             <button onClick={() => setModalOpen(false)}>Cancel</button>
-            <button onClick={() => handleDelete(selected._id)} style={{background:'#f44336', color:'#fff', padding:'5px 10px', borderRadius:'4px'}}>Delete</button>
+            <button onClick={() => handleDelete(selected.id)} style={{background:'#f44336', color:'#fff', padding:'5px 10px', borderRadius:'4px'}}>Delete</button>
           </div>
         </Modal>
       )}

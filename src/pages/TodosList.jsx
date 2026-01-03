@@ -14,7 +14,7 @@ export default function TodosList() {
   };
 
   const handleEdit = (todo) => {
-    navigate(`/edit/${todo._id}`);
+    navigate(`/edit/${todo.id}`);
   };
 
   useEffect(() => { loadTodos(); }, []);
